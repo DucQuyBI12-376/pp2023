@@ -10,5 +10,5 @@ Student Info
 =========================
 
 * Student Name: Nguyễn Trần Đức Quý
-* Student ID: BI12-376
+* Student ID: BI12.376
 
