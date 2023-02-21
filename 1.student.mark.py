@@ -8,12 +8,12 @@ marks = {}
 def input_students():
     NumofStudent = int(input("Input Number Of Student: "))
 # Input Id, name, DOB
-    for i in range(1, NumofStudent):
+    for i in range(NumofStudent):
         student_id = input("Enter Student ID: ")
         student_name = input("Enter the student name: ")
         student_DoB = input("Enter the student DoB: ")
         students [student_id] = {'name': student_name, 'dob': student_DoB}
-        return student_id, student_name, student_DoB
+        
 # Input number of course
 ##  Define Function to input course info
 def input_course():
@@ -23,33 +23,35 @@ def input_course():
         course_id = input("Input Course ID: ")
         course_name = input("Input Course Name: ")
         course[course_id] = {'Name': course_name}
-        return course_id, course_name
+        
 # Select course
 ##  Define Function to select course, input marks
 def input_marks():
     course_id = input("Select a course ID: ")
     if course_id not in course:
-        print("Invalid Course ID, please try again")
-        return course_id
+        print("Invalid Course ID")
+        return
     for student_id in students:
         mark = int(input(f"Enter the mark for {students[student_id]['name']}: "))
-    if student_id not in marks:
-        marks[student_id] = {}
-    marks[student_id][course_id] = mark
+        if student_id not in marks:
+            marks[student_id] = {}
+        marks[student_id][course_id] = mark
 # Define function to list courses
 def list_courses():
+    print(" ------------------------------ ")
     for course_id in course:
-        print(f"{course_id}: {course[course_id]['name']}" + "\n")
-        print(" ------------------------------ \n")
+        print(f"{course_id}: {course[course_id]['Name']}")
 
 # Define function to list students
 def list_students():
+    print(" ------------------------------ ")
     for student_id in students:
-        print(f"{student_id}: {students[student_id]['name']}" + "\n")
-        print(" ------------------------------ \n")
+        print(f"{student_id}: {students[student_id]['name']}")
+    
 
 # Define function to show marks for a given course
 def show_marks():
+    print(" ------------------------------ ")
     course_id = input("Enter the course ID: ")
     if course_id not in course:
         print("Invalid course ID")
@@ -59,7 +61,8 @@ def show_marks():
             print(f"{students[student_id]['name']}: {marks[student_id][course_id]}")
         else:
             print(f"{students[student_id]['name']}: N/A")
-            
+
+
 while True:
         print(" --------------------- \n")
         print("1. Add students")
