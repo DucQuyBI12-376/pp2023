@@ -89,6 +89,7 @@ class StudentManagementSystem:
                 student = self.students[student_id]
                 print(f" - {student.name}: {mark}")
 
+# Function to enter Students and Courses
 if __name__ == '__main__':
     system = StudentManagementSystem()
 
@@ -104,7 +105,8 @@ if __name__ == '__main__':
         name = input(f"Enter name for course {i+1}: ")
         id = input(f"Enter ID for course {i+1}: ")
         system.add_course(name, id)
-
+        
+# Main table to add and view marks,  students, courses.
 while True:
         print("1. Add marks\n2. View students\n3. View courses\n4. View marks\n5. Quit")
         choice = input("Enter your choice: ")
