@@ -63,7 +63,7 @@ class StudentManagementSystem:
         mark = input("Enter the mark: ")
         course.marks[student_id] = mark
         print("Mark added successfully!")
-
+# View Course, Students and Marks
     def view_students(self):
         print("List of students:")
         for student in self.students.values():
